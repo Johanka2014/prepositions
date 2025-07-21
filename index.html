@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Prepositions of Place</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            color: #333;
+        }
+        .card-container {
+            perspective: 1000px;
+        }
+        .card {
+            transition: transform 0.6s, opacity 0.6s;
+            backface-visibility: hidden;
+        }
+        .slide-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .slide-hidden {
+            transform: translateX(100%) rotateY(-20deg);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .slide-hidden-left {
+            transform: translateX(-100%) rotateY(20deg);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .slide-active {
+            transform: translateX(0) rotateY(0);
+            opacity: 1;
+            position: relative;
+        }
+        .quiz-input {
+            border-bottom: 2px solid #ccc;
+            background-color: transparent;
+            text-align: center;
+            width: 100%;
+        }
+        .correction-input {
+             border-bottom: 2px solid #ccc;
+             background-color: transparent;
+        }
+        .correction-input:focus, .quiz-input:focus {
+            outline: none;
+            border-bottom: 2px solid #3f2b96;
+        }
+        .correct {
+            border-bottom-color: #4ade80;
+        }
+        .incorrect {
+            border-bottom-color: #f87171;
+        }
+         /* Styles for the circle quiz */
+        .choice-group .choice {
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 9999px;
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid transparent;
+        }
+        .choice-group .choice.selected {
+            background-color: #4f46e5;
+            color: white;
+            border-color: #3730a3;
+        }
+        .choice-group .choice.correct-answer {
+             background-color: #22c55e;
+             color: white;
+        }
+        .choice-group .choice.incorrect-answer {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <!-- Main Content -->
+        <main id="presentation-container" class="card-container relative overflow-hidden min-h-[650px] flex items-center">
+
+            <!-- Slide 1: Title -->
+            <div id="slide-1" class="card slide-active w-full p-6 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://johanka2014.github.io/prepositions/prepositions.png" alt="Illustration of prepositions of place" class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2 text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Teaching Prepositions of Place</h1>
+                        <p class="text-2xl md:text-3xl text-indigo-600 mt-2">A Lesson Plan for B1 Students</p>
+                        <div class="mt-8 text-lg text-gray-700 space-y-3">
+                            <p><strong>Target:</strong> B1 level ESL learners</p>
+                            <p><strong>Focus:</strong> Common mistakes with prepositions of place</p>
+                            <p><strong>Skills:</strong> Reading, listening, and free practice</p>
+                            <p><strong>Duration:</strong> Approx. 60 minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2: The Fundamentals -->
+            <div id="slide-2" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">The Fundamentals: Prepositions of Place</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-blue-700">'IN'</h3>
+                        <p class="font-semibold mt-2">Used for enclosed spaces or larger areas.</p>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-700">
+                            <li>in the box</li>
+                            <li>in the room</li>
+                             <li>in London</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-purple-700">'ON'</h3>
+                         <p class="font-semibold mt-2">Used for surfaces.</p>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-700">
+                           <li>on the table</li>
+                           <li>on the wall</li>
+                           <li>on the floor</li>
+                        </ul>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-indigo-700">'AT'</h3>
+                         <p class="font-semibold mt-2">Used for specific points or locations.</p>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-700">
+                           <li>at the bus stop</li>
+                           <li>at the door</li>
+                           <li>at the top of the page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Common Mistakes -->
+            <div id="slide-3" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Common Mistakes with Prepositions of Place</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+                    <div class="p-4 bg-red-50 rounded-lg shadow-md">
+                        <h3 class="font-bold text-red-700 mb-2">Confusing Similar Prepositions</h3>
+                        <p>Mixing up <code class="bg-red-100 px-1 rounded">in / on / at</code>, or <code class="bg-red-100 px-1 rounded">behind / in front of / next to</code>.</p>
+                    </div>
+                    <div class="p-4 bg-red-50 rounded-lg shadow-md">
+                        <h3 class="font-bold text-red-700 mb-2">Omitting or Incorrect Prepositions</h3>
+                        <p>Leaving out prepositions in location phrases (e.g., "He is ___ the kitchen").</p>
+                    </div>
+                    <div class="p-4 bg-red-50 rounded-lg shadow-md">
+                        <h3 class="font-bold text-red-700 mb-2">Misplacing Prepositions</h3>
+                        <p>Incorrect sentence structure, such as placing the preposition at the end of the sentence inappropriately.</p>
+                    </div>
+                    <div class="p-4 bg-red-50 rounded-lg shadow-md">
+                        <h3 class="font-bold text-red-700 mb-2">Overgeneralising Rules</h3>
+                        <p>Applying a rule too broadly, e.g., saying "on the room" instead of "in the room".</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Picture Quiz -->
+            <div id="slide-4" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Practice: Answer the Questions</h2>
+                <p class="text-center mb-4">Answer the questions about the pictures. Use in, at, or on with the words below the pictures.</p>
+                 <div class="mb-6">
+                    <img src="https://johanka2014.github.io/prepositions/prepositions_2.png" alt="A series of images for a preposition quiz" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div id="picture-quiz-exercise" class="text-lg space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p>1. Where does Sue work? <input type="text" data-answer="in the sales department" class="quiz-input"></p>
+                            <p>2. Sue lives in this building. Where's her flat exactly? <input type="text" data-answer="on the second floor" class="quiz-input"></p>
+                            <p>3. Where is the woman standing? <input type="text" data-answer="at the corner" class="quiz-input"></p>
+                            <p>4. Where is the man standing? <input type="text" data-answer="in the corner" class="quiz-input"></p>
+                            <p>5. Where's the cat? <input type="text" data-answer="at the top of the stairs" class="quiz-input"></p>
+                        </div>
+                        <div>
+                            <p>6. Where's the dog? <input type="text" data-answer="in the back of the car" class="quiz-input"></p>
+                            <p>7. Liz is in this group of people. Where is she? <input type="text" data-answer="in the front" class="quiz-input"></p>
+                            <p>8. Where's the post office? <input type="text" data-answer="on the left" class="quiz-input"></p>
+                            <p>9. Gary is at the cinema. Where is he sitting? <input type="text" data-answer="in the back row" class="quiz-input"></p>
+                            <p>10. Where does Kate work? <input type="text" data-answer="on a farm" class="quiz-input"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="check-picture-quiz-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                <div id="picture-quiz-feedback" class="text-center mt-4 font-semibold"></div>
+            </div>
+
+            <!-- Slide 5: Complete the Sentences Quiz -->
+            <div id="slide-5" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Practice: Complete the Sentences</h2>
+                 <p class="text-center mb-4">Complete the sentences. Use in, at or on + the following:</p>
+                <div class="text-center bg-gray-100 p-4 rounded-lg mb-6 shadow-inner">
+                    <p class="font-semibold">the west coast | the world | the back of the class | the sky | the front row | the right | the back of this card | the way to work</p>
+                </div>
+                <div id="complete-sentences-exercise" class="text-lg space-y-4">
+                    <ol class="space-y-3">
+                        <li class="flex items-baseline"><span class="mr-2">1.</span><span class="flex-shrink-0">It was a lovely day. There wasn't a cloud</span><div class="flex-grow mx-2" style="min-width: 100px;"><input type="text" data-answer="in the sky" class="quiz-input"></div><span>.</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">2.</span><span class="flex-shrink-0">In most countries people drive</span><div class="flex-grow mx-2" style="min-width: 100px;"><input type="text" data-answer="on the right" class="quiz-input"></div><span>.</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">3.</span><span class="flex-shrink-0">What is the tallest building</span><div class="flex-grow mx-2" style="min-width: 100px;"><input type="text" data-answer="in the world" class="quiz-input"></div><span>?</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">4.</span><span class="flex-shrink-0">I usually buy a newspaper</span><div class="flex-grow mx-2" style="min-width: 150px;"><input type="text" data-answer="on the way to work" class="quiz-input"></div><span>in the morning.</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">5.</span><span class="flex-shrink-0">San Francisco is</span><div class="flex-grow mx-2" style="min-width: 150px;"><input type="text" data-answer="on the west coast" class="quiz-input"></div><span>of the United States.</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">6.</span><span class="flex-shrink-0">We went to the theatre last night. We had seats</span><div class="flex-grow mx-2" style="min-width: 120px;"><input type="text" data-answer="in the front row" class="quiz-input"></div><span>.</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">7.</span><span class="flex-shrink-0">I couldn't hear the teacher. She spoke quietly and I was sitting</span><div class="flex-grow mx-2" style="min-width: 180px;"><input type="text" data-answer="at the back of the class" class="quiz-input"></div><span>.</span></li>
+                        <li class="flex items-baseline"><span class="mr-2">8.</span><span class="flex-shrink-0">I don't have your address. Could you write it</span><div class="flex-grow mx-2" style="min-width: 200px;"><input type="text" data-answer="on the back of this card" class="quiz-input"></div><span>?</span></li>
+                    </ol>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="check-complete-sentences-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                <div id="complete-sentences-feedback" class="text-center mt-4 font-semibold"></div>
+            </div>
+
+            <!-- Slide 6: Complete the Sentences Quiz 2 -->
+            <div id="slide-6" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Practice: Complete the Sentences</h2>
+                <p class="text-center mb-4">Complete these sentences with in, at or on.</p>
+                <div id="complete-sentences-exercise-2" class="text-lg space-y-4">
+                     <ol class="list-decimal list-inside space-y-2">
+                        <li>We went to a concert <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> the National Concert Hall.</li>
+                        <li>It was a very slow train. It stopped <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> every station.</li>
+                        <li>My parents live <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> a small village about 50 miles from London.</li>
+                        <li>I haven't seen Kate for some time. I last saw her <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> David's wedding.</li>
+                        <li>We stayed <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> a very comfortable hotel when we were <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> Amsterdam.</li>
+                        <li>There were about fifty rooms <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> the hotel.</li>
+                        <li>I don't know where my umbrella is. Perhaps I left it <input type="text" data-answer="on" class="quiz-input" style="width: 3rem;"> the bus.</li>
+                        <li>'Where were you on Monday evening?' 'I was <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> a friend's house.'</li>
+                        <li>There must be somebody <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> the house. The lights are on.</li>
+                        <li>The exhibition <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> the Museum of Modern Art finishes on Saturday.</li>
+                        <li>Shall we travel <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> your car or mine?</li>
+                        <li>I didn't expect you to be <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> home. I thought you'd be <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> work.</li>
+                        <li>'Did you like the movie?' 'Yes, but it was too hot <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> the cinema.'</li>
+                        <li>Paul lives <input type="text" data-answer="in" class="quiz-input" style="width: 3rem;"> Birmingham. He's a student <input type="text" data-answer="at" class="quiz-input" style="width: 3rem;"> Birmingham University.</li>
+                    </ol>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="check-complete-sentences-btn-2" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                <div id="complete-sentences-feedback-2" class="text-center mt-4 font-semibold"></div>
+            </div>
+
+            <!-- Slide 7: Listening Activity -->
+            <div id="slide-7" class="card slide-hidden w-full slide-box p-6 md:p-12" style="background-color: #0c0b10;">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">Listening Activity: Lucy in the Sky with Diamonds</h2>
+                <p class="text-center mb-4 text-gray-300">Listen to the song and choose the correct preposition.</p>
+                <div class="flex flex-col lg:flex-row gap-8 items-start">
+                    <div class="w-full lg:w-1/2">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://www.youtube.com/embed/naoknj1ebqI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg shadow-xl w-full h-full"></iframe>
+                        </div>
+                    </div>
+                    <div id="lucy-quiz-exercise" class="w-full lg:w-1/2 text-base space-y-4 text-white">
+                        <p>Picture yourself <span class="choice-group"><span class="choice" data-correct="true">in</span> / <span class="choice">on</span></span> a boat <span class="choice-group"><span class="choice">at</span> / <span class="choice" data-correct="true">on</span></span> a river...</p>
+                        <p>Somebody calls you, you answer quite slowly, a girl with kaleidoscope eyes.</p>
+                        <p>Cellophane flowers of yellow and green towering <span class="choice-group"><span class="choice" data-correct="true">over</span> / <span class="choice">under</span></span> your head.</p>
+                        <p>Look for the girl with the sun <span class="choice-group"><span class="choice" data-correct="true">in</span> / <span class="choice">at</span></span> her eyes and she's gone.</p>
+                        <p>Lucy <span class="choice-group"><span class="choice" data-correct="true">in</span> / <span class="choice">on</span></span> the sky with diamonds.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="check-lucy-quiz-btn" class="bg-pink-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-pink-600 transition-colors">Check Answers</button>
+                </div>
+                <div id="lucy-quiz-feedback" class="text-center mt-4 font-semibold text-white"></div>
+            </div>
+
+            <!-- Slide 8: Free Practice -->
+            <div id="slide-8" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice Activities</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-blue-700">"Where Is It?" Game</h3>
+                        <p class="mt-2 text-gray-700">Describe the location of an object in your room without naming it. Let a partner guess what it is.</p>
+                        <textarea class="mt-4 w-full p-2 border rounded-lg h-32" placeholder="e.g., It's on the wall, above my desk, next to a poster..."></textarea>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-purple-700">Giving Directions</h3>
+                         <p class="mt-2 text-gray-700">Write down directions from your front door to the kitchen, using as many prepositions of place as you can.</p>
+                        <textarea class="mt-4 w-full p-2 border rounded-lg h-32" placeholder="e.g., Go through the door and turn left. The kitchen is next to the living room..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Slide 9: Summary & Teaching Tips -->
+            <div id="slide-9" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Summary & Teaching Tips</h2>
+                <div class="grid md:grid-cols-2 gap-6 text-lg">
+                    <div class="p-4 bg-blue-50 rounded-lg shadow-md">Reinforce learning through multi-sensory activities (visual, auditory, kinesthetic).</div>
+                    <div class="p-4 bg-purple-50 rounded-lg shadow-md">Use real objects and the classroom environment for contextual learning.</div>
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">Regularly revisit common mistakes and clarify confusing prepositions.</div>
+                    <div class="p-4 bg-yellow-50 rounded-lg shadow-md">Incorporate songs and games to maintain engagement and motivation.</div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center mt-6">
+            <button id="prev-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                &larr; Previous
+            </button>
+            <div id="slide-counter" class="text-white font-semibold">1 / 9</div>
+            <button id="next-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                Next &rarr;
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Wrap the entire script in an IIFE to create a private scope.
+        (function() {
+            document.addEventListener('DOMContentLoaded', () => {
+                // --- Variable Declarations ---
+                const slides = document.querySelectorAll('.card');
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+                const slideCounter = document.getElementById('slide-counter');
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+
+                // --- Event Handlers for Quizzes ---
+                const readingCheckHandler = () => {
+                    const exercise = document.getElementById('reading-exercise');
+                    const feedback = document.getElementById('reading-feedback');
+                    checkQuizAnswers(exercise, feedback, "Excellent! All answers are correct.", `You got {correct} out of {total} correct. Try again!`);
+                };
+
+                const listeningCheckHandler = () => {
+                    const exercise = document.getElementById('listening-exercise');
+                    const feedback = document.getElementById('listening-feedback');
+                    checkQuizAnswers(exercise, feedback, "Perfect! All gaps filled correctly.", `You got {correct} out of {total} correct. Keep trying!`);
+                };
+
+                const pictureQuizCheckHandler = () => {
+                    const exercise = document.getElementById('picture-quiz-exercise');
+                    const feedback = document.getElementById('picture-quiz-feedback');
+                    checkQuizAnswers(exercise, feedback, "Great job! All answers are correct.", `You got {correct} out of {total} correct. Give it another go!`);
+                };
+
+                const completeSentencesHandler = () => {
+                    const exercise = document.getElementById('complete-sentences-exercise');
+                    const feedback = document.getElementById('complete-sentences-feedback');
+                    checkQuizAnswers(exercise, feedback, "Fantastic! All sentences are complete.", `You got {correct} out of {total} correct. Try again!`);
+                };
+                
+                const completeSentencesHandler2 = () => {
+                    const exercise = document.getElementById('complete-sentences-exercise-2');
+                    const feedback = document.getElementById('complete-sentences-feedback-2');
+                    checkQuizAnswers(exercise, feedback, "Well done! All answers are correct.", `You got {correct} out of {total} correct. Try again!`);
+                };
+
+                const lucyQuizCheckHandler = () => {
+                    const exercise = document.getElementById('lucy-quiz-exercise');
+                    const feedback = document.getElementById('lucy-quiz-feedback');
+                    checkCircleQuizAnswers(exercise, feedback);
+                };
+
+                // --- Core Functions ---
+                function checkQuizAnswers(exerciseEl, feedbackEl, successMsg, errorMsgTemplate) {
+                    const inputs = exerciseEl.querySelectorAll('input');
+                    let correctCount = 0;
+                    inputs.forEach(input => {
+                        const userAnswer = input.value.trim().toLowerCase();
+                        const correctAnswer = input.dataset.answer.toLowerCase();
+                        input.classList.remove('correct', 'incorrect');
+                        if (userAnswer === correctAnswer) {
+                            input.classList.add('correct');
+                            correctCount++;
+                        } else {
+                            input.classList.add('incorrect');
+                        }
+                    });
+
+                    if (correctCount === inputs.length) {
+                        feedbackEl.textContent = successMsg;
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-green-600';
+                    } else {
+                        const errorMsg = errorMsgTemplate.replace('{correct}', correctCount).replace('{total}', inputs.length);
+                        feedbackEl.textContent = errorMsg;
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-red-600';
+                    }
+                }
+
+                 function checkCircleQuizAnswers(exerciseEl, feedbackEl) {
+                    const choiceGroups = exerciseEl.querySelectorAll('.choice-group');
+                    let correctCount = 0;
+                    let totalQuestions = 0;
+                    choiceGroups.forEach(group => {
+                        totalQuestions++;
+                        const selected = group.querySelector('.choice.selected');
+                        const choices = group.querySelectorAll('.choice');
+                        
+                        choices.forEach(c => c.classList.remove('correct-answer', 'incorrect-answer'));
+
+                        if (selected) {
+                            if (selected.hasAttribute('data-correct')) {
+                                selected.classList.add('correct-answer');
+                                correctCount++;
+                            } else {
+                                selected.classList.add('incorrect-answer');
+                            }
+                        }
+                    });
+
+                    if (correctCount === totalQuestions) {
+                        feedbackEl.textContent = "Flawless! You got everything right!";
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-green-600';
+                    } else {
+                        feedbackEl.textContent = `You got ${correctCount} out of ${totalQuestions} correct. Review the red answers and try again!`;
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-red-600';
+                    }
+                }
+                
+                function handleChoiceClick(event) {
+                    if (event.target.classList.contains('choice')) {
+                        const group = event.target.parentElement;
+                        group.querySelectorAll('.choice').forEach(choice => {
+                            choice.classList.remove('selected');
+                        });
+                        event.target.classList.add('selected');
+                    }
+                }
+
+                function cleanupSlide(slideIndex) {
+                    if (slideIndex === 3) { 
+                        const btn = document.getElementById('check-picture-quiz-btn');
+                        if (btn) btn.removeEventListener('click', pictureQuizCheckHandler);
+                    }
+                    if (slideIndex === 4) { 
+                        const btn = document.getElementById('check-complete-sentences-btn');
+                        if (btn) btn.removeEventListener('click', completeSentencesHandler);
+                    }
+                    if (slideIndex === 5) { 
+                        const btn = document.getElementById('check-complete-sentences-btn-2');
+                        if (btn) btn.removeEventListener('click', completeSentencesHandler2);
+                    }
+                    if (slideIndex === 6) { 
+                        const btn = document.getElementById('check-lucy-quiz-btn');
+                        if (btn) btn.removeEventListener('click', lucyQuizCheckHandler);
+                        const exercise = document.getElementById('lucy-quiz-exercise');
+                        if(exercise) exercise.removeEventListener('click', handleChoiceClick);
+                    }
+                    if (slideIndex === 7) { 
+                        const btn = document.getElementById('check-reading-btn');
+                        if (btn) btn.removeEventListener('click', readingCheckHandler);
+                    }
+                    if (slideIndex === 8) { 
+                        const btn = document.getElementById('check-listening-btn');
+                        if (btn) btn.removeEventListener('click', listeningCheckHandler);
+                    }
+                }
+
+                function setupSlide(slideIndex) {
+                     if (slideIndex === 3) { 
+                        const btn = document.getElementById('check-picture-quiz-btn');
+                        if (btn) btn.addEventListener('click', pictureQuizCheckHandler);
+                    }
+                    if (slideIndex === 4) { 
+                        const btn = document.getElementById('check-complete-sentences-btn');
+                        if (btn) btn.addEventListener('click', completeSentencesHandler);
+                    }
+                    if (slideIndex === 5) { 
+                        const btn = document.getElementById('check-complete-sentences-btn-2');
+                        if (btn) btn.addEventListener('click', completeSentencesHandler2);
+                    }
+                    if (slideIndex === 6) { 
+                        const btn = document.getElementById('check-lucy-quiz-btn');
+                        if (btn) btn.addEventListener('click', lucyQuizCheckHandler);
+                        const exercise = document.getElementById('lucy-quiz-exercise');
+                        if(exercise) exercise.addEventListener('click', handleChoiceClick);
+                    }
+                    if (slideIndex === 7) { 
+                        const btn = document.getElementById('check-reading-btn');
+                        if (btn) btn.addEventListener('click', readingCheckHandler);
+                    }
+                    if (slideIndex === 8) { 
+                        const btn = document.getElementById('check-listening-btn');
+                        if (btn) btn.addEventListener('click', listeningCheckHandler);
+                    }
+                }
+
+                function showSlide(index) {
+                    cleanupSlide(currentSlide);
+                    currentSlide = index;
+
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('slide-active', 'slide-hidden', 'slide-hidden-left');
+                        if (i === currentSlide) {
+                            slide.classList.add('slide-active');
+                        } else if (i < currentSlide) {
+                            slide.classList.add('slide-hidden-left');
+                        } else {
+                            slide.classList.add('slide-hidden');
+                        }
+                    });
+
+                    slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+                    prevBtn.disabled = currentSlide === 0;
+                    nextBtn.disabled = currentSlide === totalSlides - 1;
+
+                    setupSlide(currentSlide);
+                }
+                
+                // --- Initial Setup ---
+                nextBtn.addEventListener('click', () => {
+                    if (currentSlide < totalSlides - 1) {
+                        showSlide(currentSlide + 1);
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentSlide > 0) {
+                        showSlide(currentSlide - 1);
+                    }
+                });
+
+                showSlide(0);
+            });
+        })();
+    </script>
+</body>
+</html>
